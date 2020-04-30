@@ -8,7 +8,11 @@ class HomeViewModel(
     private val handle: SavedStateHandle
 ): ViewModel() {
 
-    val header = MutableLiveData<String>()
+    companion object {
+        private const val KEY_MESSAGE = "KEY_MESSAGE"
+    }
+
+    val header: MutableLiveData<String> = handle.getLiveData<String>(KEY_MESSAGE)
 
     init {
         header.value = "Hello World"
