@@ -18,8 +18,6 @@ object Deps {
         val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
         val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
         val savedStateViewModel = "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
-
-        val testHelpers = "androidx.arch.core:core-testing:$arch_version"
     }
 
     val Ui = object {
@@ -29,6 +27,14 @@ object Deps {
     val Plugins = object {
         val androidGradle = "com.android.tools.build:gradle:3.6.3"
         val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        val junit5 = "de.mannodermaus.gradle.plugins:android-junit5:1.5.2.0"
+    }
+
+    val Test = object {
+        val kluent = "org.amshove.kluent:kluent:1.59"
+        val mockk = "io.mockk:mockk:1.9.3"
+        val junit5Api = "org.junit.jupiter:junit-jupiter-api:5.3.2"
+        val junit5engine = "org.junit.jupiter:junit-jupiter-engine:5.3.2"
     }
 
 }
