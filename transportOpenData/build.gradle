@@ -1,9 +1,27 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Deps.Kotlin.stdlib
+    implementation Deps.retrofit
+    implementation Deps.moshi
+    implementation Deps.rx
+    implementation Deps.retroRxAdapter
+    implementation Deps.okHttp
+    implementation Deps.okHttpMock
+
+    // ------- Tests --------
+    testImplementation Deps.Test.junit5Api
+    testRuntimeOnly Deps.Test.junit5engine
+    testImplementation Deps.Test.kluent
+    testImplementation Deps.Test.mockk
 }
 
 sourceCompatibility = "8"

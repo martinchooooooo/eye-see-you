@@ -3,6 +3,13 @@ object Deps {
 
     private const val kotlinVersion = "1.3.71"
 
+    val retrofit = "com.squareup.retrofit2:retrofit:2.8.1"
+    val moshi = "com.squareup.retrofit2:converter-moshi:2.4.0"
+    val rx = "io.reactivex.rxjava3:rxjava:3.0.0"
+    val retroRxAdapter = "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
+    val okHttp = "com.squareup.okhttp3:okhttp:4.6.0"
+    val okHttpMock = "com.squareup.okhttp3:mockwebserver:4.6.0"
+
     val Kotlin = object {
         val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     }
