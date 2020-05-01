@@ -10,10 +10,11 @@ import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.net.URL
 
 
 class LibTransportImpl(
-    url: HttpUrl = "https://api.transport.nsw.gov.au".toHttpUrl(),
+    url: URL = URL("https://api.transport.nsw.gov.au"),
     apiKey: String = "",
     private val backgroundScheduler: Scheduler
 ): LibTransport {

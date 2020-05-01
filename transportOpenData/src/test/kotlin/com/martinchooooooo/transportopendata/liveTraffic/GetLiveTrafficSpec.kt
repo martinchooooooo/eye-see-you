@@ -17,7 +17,7 @@ internal class GetLiveTrafficSpec {
     @BeforeEach
     fun setup() {
         mockServer = MockWebServer()
-        libImpl = LibTransportImpl(url = mockServer.url("/"), backgroundScheduler = Schedulers.trampoline())
+        libImpl = LibTransportImpl(url = mockServer.url("/").toUrl() , backgroundScheduler = Schedulers.trampoline())
     }
 
     @Test
