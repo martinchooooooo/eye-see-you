@@ -47,7 +47,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':transportOpenData')
     implementation Deps.Kotlin.stdlib
+
+    implementation Deps.koin
+    implementation Deps.koinVM
+    implementation Deps.rx
 
     implementation Deps.AndroidX.appCompat
     implementation Deps.AndroidX.coreKtx

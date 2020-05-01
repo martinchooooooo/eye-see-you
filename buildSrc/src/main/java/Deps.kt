@@ -10,6 +10,9 @@ object Deps {
     val okHttp = "com.squareup.okhttp3:okhttp:4.6.0"
     val okHttpMock = "com.squareup.okhttp3:mockwebserver:4.6.0"
 
+    val koin = "org.koin:koin-android:2.1.5"
+    val koinVM = "org.koin:koin-androidx-viewmodel:2.1.5"
+
     val Kotlin = object {
         val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     }
