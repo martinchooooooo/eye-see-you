@@ -1,3 +1,4 @@
 rootProject.name='Cravings'
 include ':app'
 include ':buildSrc'
+include ':transportOpenData'
