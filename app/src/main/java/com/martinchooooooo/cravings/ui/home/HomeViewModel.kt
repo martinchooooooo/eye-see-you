@@ -1,9 +1,11 @@
 package com.martinchooooooo.cravings.ui.home
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.martinchooooooo.transportopendata.LibTransport
+import com.martinchooooooo.transportopendata.liveTraffic.LiveTraffic
 import io.reactivex.rxjava3.core.Scheduler
 
 class HomeViewModel(
@@ -13,13 +15,17 @@ class HomeViewModel(
 ) : ViewModel() {
 
     companion object {
-        private const val KEY_MESSAGE = "KEY_MESSAGE"
+        private const val LOG_TAG = "HomeViewModel"
     }
 
-    val header: MutableLiveData<String> = handle.getLiveData<String>(KEY_MESSAGE)
+    val trafficCameras = MutableLiveData<List<LiveTraffic>>()
 
     init {
-        header.value = "Hello World"
+        libTranport.getLiveTraffic().observeOn(mainThread).subscribe({
+            trafficCameras.value = it
+        }, {
+            Log.e(LOG_TAG, "Unable to get our traffic data: ${it.message}")
+        })
     }
 
 }

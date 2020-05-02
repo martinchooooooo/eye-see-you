@@ -20,8 +20,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun bind() {
-        viewModel.header.observe(this, Observer {
-            binding.header.text = it
+        viewModel.trafficCameras.observe(this, Observer {
+            binding.header.text = it.map { it.title }.joinToString(", ")
         })
     }
 

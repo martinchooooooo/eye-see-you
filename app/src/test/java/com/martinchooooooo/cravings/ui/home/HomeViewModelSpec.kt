@@ -2,27 +2,52 @@ package com.martinchooooooo.cravings.ui.home
 
 import androidx.lifecycle.SavedStateHandle
 import com.martinchooooooo.cravings.InstantExecutorExtension
-import org.amshove.kluent.shouldBeEqualTo
+import com.martinchooooooo.cravings.emitSingle
+import com.martinchooooooo.transportopendata.LibTransport
+import com.martinchooooooo.transportopendata.liveTraffic.LiveTraffic
+import io.mockk.every
+import io.mockk.mockk
+import io.reactivex.rxjava3.schedulers.Schedulers
+import io.reactivex.rxjava3.subjects.BehaviorSubject
+import org.amshove.kluent.shouldBe
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import java.net.URL
 
 @ExtendWith(InstantExecutorExtension::class)
 class HomeViewModelSpec {
 
-    lateinit var vm: HomeViewModel
-    val saveStateHandle = SavedStateHandle()
+    private lateinit var vm: HomeViewModel
+    private val saveStateHandle = SavedStateHandle()
+    private val lib: LibTransport = mockk()
+
+    private lateinit var liveTrafficStream: BehaviorSubject<List<LiveTraffic>>
 
     @BeforeEach
     fun setup() {
-        vm = HomeViewModel(saveStateHandle)
+        liveTrafficStream = BehaviorSubject.create()
+        every { lib.getLiveTraffic() } returns liveTrafficStream.singleOrError()
+
+        vm = HomeViewModel(saveStateHandle, lib, Schedulers.trampoline())
     }
 
     @Test
-    fun `header is available when created`() {
-        // given a view model has already been created
+    fun `live traffic from lib is stored in liveTraffic property`() {
+        // given live traffic info
+        val traffic = listOf(
+            LiveTraffic(
+                region = "Sydney",
+                href = URL("http://www.example.com"),
+                direction = "W",
+                title = "Some lights",
+                view = "Perfect"
+            )
+        )
+        // when
+        liveTrafficStream.emitSingle(traffic)
         // then
-        vm.header.value shouldBeEqualTo "Hello World"
+        vm.trafficCameras.value shouldBe traffic
     }
 
 }
