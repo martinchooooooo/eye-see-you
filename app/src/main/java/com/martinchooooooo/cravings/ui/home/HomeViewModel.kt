@@ -4,10 +4,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.martinchooooooo.transportopendata.LibTransport
+import io.reactivex.rxjava3.core.Scheduler
 
 class HomeViewModel(
     private val handle: SavedStateHandle,
-    private val libTranport: LibTransport
+    private val libTranport: LibTransport,
+    private val mainThread: Scheduler
 ) : ViewModel() {
 
     companion object {

@@ -53,6 +53,7 @@ dependencies {
     implementation Deps.koin
     implementation Deps.koinVM
     implementation Deps.rx
+    implementation Deps.rxAndroid
 
     implementation Deps.AndroidX.appCompat
     implementation Deps.AndroidX.coreKtx
