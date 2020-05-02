@@ -64,6 +64,7 @@ dependencies {
     implementation Deps.AndroidX.activity
 
     implementation Deps.Ui.constraintLayout
+    implementation Deps.Ui.recycler
 
     // ------- Tests --------
 

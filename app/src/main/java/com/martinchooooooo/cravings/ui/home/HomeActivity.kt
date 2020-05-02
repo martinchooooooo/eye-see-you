@@ -1,9 +1,11 @@
 package com.martinchooooooo.cravings.ui.home
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.martinchooooooo.cravings.databinding.ActivityHomeBinding
+import com.martinchooooooo.cravings.databinding.ItemLiveTrafficBinding
 import org.koin.androidx.viewmodel.ext.android.stateViewModel
 
 class HomeActivity : AppCompatActivity() {
@@ -21,8 +23,9 @@ class HomeActivity : AppCompatActivity() {
 
     private fun bind() {
         viewModel.trafficCameras.observe(this, Observer {
-            binding.header.text = it.map { it.title }.joinToString(", ")
+            binding.liveTrafficRecycler.setItems(it)
         })
+
     }
 
 }

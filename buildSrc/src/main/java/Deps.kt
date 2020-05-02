@@ -33,6 +33,7 @@ object Deps {
 
     val Ui = object {
         val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
+        val recycler = "androidx.recyclerview:recyclerview:1.1.0"
     }
 
     val Plugins = object {
