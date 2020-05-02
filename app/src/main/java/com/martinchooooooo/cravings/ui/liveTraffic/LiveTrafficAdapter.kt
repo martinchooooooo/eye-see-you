@@ -3,8 +3,10 @@ package com.martinchooooooo.cravings.ui.liveTraffic
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.martinchooooooo.cravings.R
 import com.martinchooooooo.cravings.databinding.ItemLiveTrafficBinding
 import com.martinchooooooo.transportopendata.liveTraffic.LiveTraffic
+import com.squareup.picasso.Picasso
 
 class LiveTrafficAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -30,6 +32,10 @@ class LiveTrafficAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         fun bind(item: LiveTraffic) {
             binding.title.text = item.title
+            Picasso.get()
+                .load(item.href.toExternalForm())
+                .resizeDimen(R.dimen.carousel_img_width, R.dimen.carousel_img_height)
+                .into(binding.imgLiveShot)
         }
 
     }

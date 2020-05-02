@@ -18,7 +18,7 @@ class LiveTrafficCarousel : RecyclerView {
 
     init {
         adapter = trafficAdapter
-        layoutManager = LinearLayoutManager(context)
+        layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
     }
 
 }

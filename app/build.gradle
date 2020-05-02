@@ -65,6 +65,7 @@ dependencies {
 
     implementation Deps.Ui.constraintLayout
     implementation Deps.Ui.recycler
+    implementation Deps.Ui.picasso
 
     // ------- Tests --------
 
