@@ -5,8 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.martinchooooooo.cravings.R
 import com.martinchooooooo.cravings.databinding.ItemLiveTrafficBinding
+import com.martinchooooooo.cravings.ui.common.RoundedTransformation
 import com.martinchooooooo.transportopendata.liveTraffic.LiveTraffic
 import com.squareup.picasso.Picasso
+
 
 class LiveTrafficAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -35,6 +37,7 @@ class LiveTrafficAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             Picasso.get()
                 .load(item.href.toExternalForm())
                 .resizeDimen(R.dimen.carousel_img_width, R.dimen.carousel_img_height)
+                .transform(RoundedTransformation(radius = 20f, margin = 0f))
                 .into(binding.imgLiveShot)
         }
 

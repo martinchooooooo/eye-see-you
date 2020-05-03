@@ -3,5 +3,6 @@
 
     <dimen name="carousel_img_height">200dp</dimen>
     <dimen name="carousel_img_width">200dp</dimen>
+    <dimen name="carousel_img_border">10dp</dimen>
 
 </resources>
