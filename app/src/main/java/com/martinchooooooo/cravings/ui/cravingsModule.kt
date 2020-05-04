@@ -13,7 +13,8 @@ import org.koin.dsl.module
 val cravingsModule = module {
 
     single<LibTransport> { LibTransportImpl(
-        backgroundScheduler = Schedulers.io()
+        backgroundScheduler = Schedulers.io(),
+        apiKey = "PUT TRANSPORT NSW API KEY HERE"
     ) }
 
     val mainThread = named("mainThread")
