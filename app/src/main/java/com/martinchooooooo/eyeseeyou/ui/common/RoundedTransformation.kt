@@ -1,6 +1,5 @@
-package com.martinchooooooo.cravings.ui.common
+package com.martinchooooooo.eyeseeyou.ui.common
 
-import android.R
 import android.graphics.*
 import com.squareup.picasso.Transformation
 

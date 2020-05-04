@@ -1,4 +1,4 @@
-package com.martinchooooooo.cravings
+package com.martinchooooooo.eyeseeyou
 
 import androidx.arch.core.executor.ArchTaskExecutor
 import androidx.arch.core.executor.TaskExecutor

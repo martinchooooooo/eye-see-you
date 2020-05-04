@@ -1,4 +1,4 @@
-package com.martinchooooooo.cravings.ui.liveTraffic
+package com.martinchooooooo.eyeseeyou.ui.liveTraffic
 
 import android.content.Context
 import android.util.AttributeSet

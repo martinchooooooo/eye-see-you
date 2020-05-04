@@ -1,11 +1,11 @@
-package com.martinchooooooo.cravings.ui.liveTraffic
+package com.martinchooooooo.eyeseeyou.ui.liveTraffic
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.martinchooooooo.cravings.R
-import com.martinchooooooo.cravings.databinding.ItemLiveTrafficBinding
-import com.martinchooooooo.cravings.ui.common.RoundedTransformation
+import com.martinchooooooo.eyeseeyou.R
+import com.martinchooooooo.eyeseeyou.databinding.ItemLiveTrafficBinding
+import com.martinchooooooo.eyeseeyou.ui.common.RoundedTransformation
 import com.martinchooooooo.transportopendata.liveTraffic.LiveTraffic
 import com.squareup.picasso.Picasso
 

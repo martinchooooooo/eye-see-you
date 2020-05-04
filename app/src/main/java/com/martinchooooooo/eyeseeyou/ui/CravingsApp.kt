@@ -1,4 +1,4 @@
-package com.martinchooooooo.cravings.ui
+package com.martinchooooooo.eyeseeyou.ui
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext

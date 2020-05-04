@@ -1,7 +1,7 @@
-package com.martinchooooooo.cravings.ui
+package com.martinchooooooo.eyeseeyou.ui
 
 import androidx.lifecycle.SavedStateHandle
-import com.martinchooooooo.cravings.ui.home.HomeViewModel
+import com.martinchooooooo.eyeseeyou.ui.home.HomeViewModel
 import com.martinchooooooo.transportopendata.LibTransport
 import com.martinchooooooo.transportopendata.LibTransportImpl
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers

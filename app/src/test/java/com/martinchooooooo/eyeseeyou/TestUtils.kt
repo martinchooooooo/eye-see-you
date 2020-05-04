@@ -1,4 +1,4 @@
-package com.martinchooooooo.cravings
+package com.martinchooooooo.eyeseeyou
 
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 

@@ -1,4 +1,4 @@
-package com.martinchooooooo.cravings.ui.common
+package com.martinchooooooo.eyeseeyou.ui.common
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.rxjava3.disposables.CompositeDisposable

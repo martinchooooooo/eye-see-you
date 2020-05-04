@@ -1,9 +1,9 @@
-package com.martinchooooooo.cravings.ui.home
+package com.martinchooooooo.eyeseeyou.ui.home
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
-import com.martinchooooooo.cravings.ui.common.BaseViewModel
+import com.martinchooooooo.eyeseeyou.ui.common.BaseViewModel
 import com.martinchooooooo.transportopendata.LibTransport
 import com.martinchooooooo.transportopendata.liveTraffic.LiveTraffic
 import com.martinchooooooo.transportopendata.store.Reactive

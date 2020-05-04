@@ -1,11 +1,10 @@
-package com.martinchooooooo.cravings.ui.home
+package com.martinchooooooo.eyeseeyou.ui.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import com.martinchooooooo.cravings.databinding.ActivityHomeBinding
-import com.martinchooooooo.cravings.databinding.ItemLiveTrafficBinding
+import com.martinchooooooo.eyeseeyou.databinding.ActivityHomeBinding
+import com.martinchooooooo.eyeseeyou.databinding.ItemLiveTrafficBinding
 import org.koin.androidx.viewmodel.ext.android.stateViewModel
 
 class HomeActivity : AppCompatActivity() {

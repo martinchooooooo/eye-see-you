@@ -1,4 +1,7 @@
-# NSW Open Data Sample App
+# Eye See You
+<i>Android sample app using NSW Open Data</i>
+
+
 
 A sample Android app built to try out some ideas and architecture patterns that I've thought about, read about or want to see if it can solve some problems I've faced in previous projects. 
 

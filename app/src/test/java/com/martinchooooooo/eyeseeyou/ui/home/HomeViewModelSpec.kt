@@ -1,8 +1,7 @@
-package com.martinchooooooo.cravings.ui.home
+package com.martinchooooooo.eyeseeyou.ui.home
 
 import androidx.lifecycle.SavedStateHandle
-import com.martinchooooooo.cravings.InstantExecutorExtension
-import com.martinchooooooo.cravings.emitSingle
+import com.martinchooooooo.eyeseeyou.InstantExecutorExtension
 import com.martinchooooooo.transportopendata.LibTransport
 import com.martinchooooooo.transportopendata.liveTraffic.LiveTraffic
 import com.martinchooooooo.transportopendata.store.Reactive
@@ -11,7 +10,6 @@ import io.mockk.mockk
 import io.mockk.verify
 import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.BehaviorSubject
-import io.reactivex.rxjava3.subjects.SingleSubject
 import org.amshove.kluent.shouldBe
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
