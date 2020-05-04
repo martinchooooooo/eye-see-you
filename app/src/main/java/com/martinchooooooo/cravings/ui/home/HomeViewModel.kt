@@ -6,6 +6,7 @@ import androidx.lifecycle.SavedStateHandle
 import com.martinchooooooo.cravings.ui.common.BaseViewModel
 import com.martinchooooooo.transportopendata.LibTransport
 import com.martinchooooooo.transportopendata.liveTraffic.LiveTraffic
+import com.martinchooooooo.transportopendata.store.Reactive
 import io.reactivex.rxjava3.core.Scheduler
 
 class HomeViewModel(
@@ -21,8 +22,17 @@ class HomeViewModel(
     val trafficCameras = MutableLiveData<List<LiveTraffic>>()
 
     init {
+        libTranport.fetchLiveTraffic()
+
         libTranport.getLiveTraffic().observeOn(mainThread).subscribe({
-            trafficCameras.value = it
+            when(it) {
+                is Reactive.Success -> {
+                    trafficCameras.value = it.value
+                }
+                is Reactive.Error -> {
+
+                }
+            }
         }, {
             Log.e(LOG_TAG, "Unable to get our traffic data: ${it.message}")
         }).store()

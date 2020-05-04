@@ -5,10 +5,13 @@ import com.martinchooooooo.cravings.InstantExecutorExtension
 import com.martinchooooooo.cravings.emitSingle
 import com.martinchooooooo.transportopendata.LibTransport
 import com.martinchooooooo.transportopendata.liveTraffic.LiveTraffic
+import com.martinchooooooo.transportopendata.store.Reactive
 import io.mockk.every
 import io.mockk.mockk
+import io.mockk.verify
 import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.BehaviorSubject
+import io.reactivex.rxjava3.subjects.SingleSubject
 import org.amshove.kluent.shouldBe
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -20,14 +23,14 @@ class HomeViewModelSpec {
 
     private lateinit var vm: HomeViewModel
     private val saveStateHandle = SavedStateHandle()
-    private val lib: LibTransport = mockk()
+    private val lib: LibTransport = mockk(relaxUnitFun = true)
 
-    private lateinit var liveTrafficStream: BehaviorSubject<List<LiveTraffic>>
+    private lateinit var liveTrafficStream: BehaviorSubject<Reactive<List<LiveTraffic>>>
 
     @BeforeEach
     fun setup() {
         liveTrafficStream = BehaviorSubject.create()
-        every { lib.getLiveTraffic() } returns liveTrafficStream.singleOrError()
+        every { lib.getLiveTraffic() } returns liveTrafficStream.hide()
 
         vm = HomeViewModel(saveStateHandle, lib, Schedulers.trampoline())
     }
@@ -45,9 +48,10 @@ class HomeViewModelSpec {
             )
         )
         // when
-        liveTrafficStream.emitSingle(traffic)
+        liveTrafficStream.onNext(Reactive.Success(traffic))
         // then
         vm.trafficCameras.value shouldBe traffic
+        verify(exactly = 1) { lib.fetchLiveTraffic() }
     }
 
 }
