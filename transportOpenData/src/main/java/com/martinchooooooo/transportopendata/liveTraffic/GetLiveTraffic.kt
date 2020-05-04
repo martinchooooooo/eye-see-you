@@ -1,13 +1,11 @@
 package com.martinchooooooo.transportopendata.liveTraffic
 
 import com.martinchooooooo.transportopendata.TransportService
-import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.core.Single
 import java.net.URL
 
 internal class GetLiveTraffic(
-    private val service: TransportService,
-    private val backgroundScheduler: Scheduler
+    private val service: TransportService
 ) : () -> Single<List<LiveTraffic>> {
 
     override fun invoke(): Single<List<LiveTraffic>> {

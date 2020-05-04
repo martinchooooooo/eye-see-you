@@ -1,10 +1,12 @@
 package com.martinchooooooo.transportopendata
 
 import com.martinchooooooo.transportopendata.liveTraffic.LiveTraffic
-import io.reactivex.rxjava3.core.Single
+import com.martinchooooooo.transportopendata.store.Reactive
+import io.reactivex.rxjava3.core.Observable
 
 interface LibTransport {
 
-    fun getLiveTraffic(): Single<List<LiveTraffic>>
+    fun fetchLiveTraffic()
+    fun getLiveTraffic(): Observable<Reactive<List<LiveTraffic>>>
 
 }
